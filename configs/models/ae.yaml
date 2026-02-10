@@ -1,0 +1,32 @@
+target: trainers.lit_ae.LitAE
+params:
+  misc_config:
+    compile: True # true # false
+    warmup: 5000
+
+  optimizer_config:
+    target: torch.optim.Adam
+    params:
+      lr: !!float 1e-4
+      weight_decay: 0.
+      betas: [0.5, 0.9]
+      eps: !!float 1e-8
+
+  scheduler_config:
+    target: torch.optim.lr_scheduler.CosineAnnealingLR 
+    params:
+      T_max: 200000
+      eta_min: !!float 1e-7
+
+  ae_config:
+    lpips_loss_scale: 0
+    t_learnable: False
+    test_y_channel: True
+
+  model_config:
+    target: models.ae.Autoencoder
+    params:
+      in_dim: 3
+      base_dim: 128
+      latent_dim: 4
+      use_skip: True

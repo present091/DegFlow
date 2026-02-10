@@ -1,0 +1,93 @@
+target: trainers.lit_rf.LitRectifiedFlow
+params:
+  compile: False
+  sampler_type: 'rk45'
+  sample_N: 1000
+  use_ema: False
+
+  data_config:
+    train:
+      input_key: image
+      target_key: ~
+    validate:
+      input_key: image
+      target_key: ~
+
+  optimizer_config:
+    target: torch.optim.Adam
+    params:
+      weight_decay: 0.
+      lr: 2e-4
+      betas: [0.9, 0.999]
+      eps: 1e-8
+      # warmup: 5000
+      # grad_clip: 1.
+
+  
+  scheduler_config:
+    target: torch.optim.lr_scheduler.CosineAnnealingLR
+    params:
+      T_max: 400000
+      eta_min: !!float 1e-7
+
+
+  rf_config:
+    interp_method: 'cubic_spline' #'linear'
+    loss_type: 'l2'
+    lpips_scale: 1e-1
+    lpips_weighting: False
+    t_learnable: False
+    test_y_channel: True
+
+  model_config:
+    target: models.ncsn.ncsnpp.NCSNpp
+    params:
+      config:
+        training:
+          continuous: True
+
+        data:
+          centered: True
+          image_size: 32 #32
+          num_channels: 4 #4
+
+        model:
+          sigma_max: 50.
+          sigma_min: 0.01
+          num_scales: 1000
+          beta_min: 0.1
+          beta_max: 20.
+          dropout: 0.1
+          scale_by_sigma: False
+          ema_rate: 0.999
+          normalization: 'GroupNorm'
+          nonlinearity: 'swish'
+          nf: 128
+          ch_mult: [1, 2, 2, 2]
+          num_res_blocks: 4
+          attn_resolutions: []
+          resamp_with_conv: True
+          conditional: True
+          fir: False
+          fir_kernel: [1, 3, 3, 1]
+          skip_rescale: True
+          resblock_type: 'biggan'
+          progressive: 'none' # 'output_skip'
+          progressive_input: 'none' # input_skip' #'residual'
+          progressive_combine: 'sum'
+          attention_type: 'ddpm'
+          init_scale: 0.
+          embedding_type: 'positional' # 'fourier'
+          fourier_scale: 16
+          conv_size: 3
+
+
+  ae_config:
+    target: models.ae.Autoencoder
+    params:
+      in_dim: 3
+      base_dim: 128
+      latent_dim: 4
+      use_skip: True
+    checkpoint: './checkpoints/autoencoder/autoencoder-step200000-version1.pth'
+

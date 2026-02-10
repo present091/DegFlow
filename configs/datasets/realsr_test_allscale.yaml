@@ -1,0 +1,17 @@
+dataset:
+  target: datasets.realsr.RealAllScalesSRDataset
+  params:
+    preload: False
+    camera_types: [Canon]
+    augmentation: False
+    test: True
+    dataroot: '/home/present091/nas/datasets/RealSR_v2_ordered/'
+
+data_loader:
+  batch_size: 1 # 256 # 8
+  shuffle: false
+  num_workers: 8
+  drop_last: false
+
+batch_transform:
+  target: datasets.batch_transform.IdentityBatchTransform

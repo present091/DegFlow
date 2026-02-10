@@ -1,0 +1,65 @@
+data:
+  target: datasets.data_module.BaseDataModule
+  params:
+    # Path to training set configuration file.
+    train_config: configs/datasets/realsr_train_allscale.yaml
+    # Path to validation set configuration file.
+    val_config: configs/datasets/realsr_test_allscale.yaml
+
+model:
+  # You can set learning rate in the following configuration file.
+  config: configs/models/rf.yaml
+  # Path to the checkpoints or weights you want to resume. At the begining, 
+  resume: ~ #'./checkpoints/rectified_flow/rectified_flow-step400000-version26.pth'
+
+lightning:
+  seed: ~
+  mode: fit  #fit
+  
+  trainer:
+    accelerator: auto # gpu # ddp
+    precision: 32 # bf16-mixed # 32 # 16-mixed
+    # Indices of GPUs used for training.
+    devices: [0, 1, 2, 3]
+    strategy: auto
+    # Path to save logs and checkpoints.
+    default_root_dir: 
+    # Max number of training steps (batches).
+    max_steps: 400001
+    # Validation frequency in terms of training steps.
+    val_check_interval: 20000
+    check_val_every_n_epoch: ~
+    log_every_n_steps: 400000
+    # strategy: "ddp_find_unused_parameters_true"
+    # Accumulate gradients from multiple batches so as to increase batch size.
+    # accumulate_grad_batches: 1
+    # # clip gradients' global norm : torch.nn.utils.clip_grad_norm_()
+    # gradient_clip_val: 0.1
+  
+  callbacks:
+    - target: trainers.model_checkpoint.RectifiedFlowCheckpoint #pytorch_lightning.callbacks.ModelCheckpoint # models.callbacks.ModelCheckpoint
+      params: 
+        save_dir: "./checkpoints/rectified_flow/"
+        save_interval: 400000 # 100000
+        save_last: False
+        verbose: True
+
+    - target: pytorch_lightning.callbacks.LearningRateMonitor
+      params:
+        logging_interval: 'step'
+        
+    - target: pytorch_lightning.callbacks.RichProgressBar
+      params:
+        leave: True
+
+  loggers:
+    # - target: trainers.loggers.LocalImageLogger
+    #   params:
+    #    save_dir : ~
+    #    name: ~
+    #    version: ~
+
+    - target: pytorch_lightning.loggers.TensorBoardLogger
+      params:
+        save_dir : ./logs/
+        version: 3
