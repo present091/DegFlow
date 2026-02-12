@@ -115,12 +115,6 @@ python generate.py --config configs/generate.yaml
 
 Pretrained models will be released soon.
 
-After downloading, specify checkpoint paths in config files:
-
-```yaml
-checkpoint: /path/to/checkpoint.ckpt
-```
-
 ---
 
 ## Citation
