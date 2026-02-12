@@ -21,8 +21,20 @@ We propose **DegFlow**, a continuous degradation modeling framework that can **s
 
 ---
 
+## Results
 
-## Dataset
+### Generated Continuous-Scale LR Images
+
+<img width="940" height="352" alt="image" src="https://github.com/user-attachments/assets/6774d968-5496-49a4-956c-25bbb8ae7cf4" />
+
+### Unseen-Scale SR Results
+
+<img width="1297" height="432" alt="image" src="https://github.com/user-attachments/assets/d2a65c08-9f75-4bb6-8b0a-9ff4095dbc40" />
+
+
+---
+
+## Dataset Preparation
 
 We use the **RealSR Version 2** dataset for both training and evaluation.
 
