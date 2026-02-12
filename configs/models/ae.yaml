@@ -1,7 +1,7 @@
 target: trainers.lit_ae.LitAE
 params:
   misc_config:
-    compile: True # true # false
+    compile: True # False
     warmup: 5000
 
   optimizer_config:

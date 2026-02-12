@@ -6,10 +6,10 @@ dataset:
     patch_size: 256
     augmentation: True
     test: False
-    dataroot: '/home/present091/nas/datasets/RealSR_v2_ordered/'
+    dataroot: 'Path_to_RealSR_dataset_root_directory'
 
 data_loader:
-  batch_size: 8 # 256 # 8
+  batch_size: 16
   shuffle: True
   persistent_workers: True
   num_workers: 16

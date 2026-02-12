@@ -3,16 +3,14 @@ data:
   params:
     # Path to training set configuration file.
     train_config: configs/datasets/realsr_train.yaml
-    # train_config: configs/datasets/realsr_train_allscale.yaml
     # Path to validation set configuration file.
-    # val_config: configs/datasets/realsr_test.yaml
     val_config: configs/datasets/realsr_test_allscale.yaml
 
 model:
   # You can set learning rate in the following configuration file.
   config: configs/models/ae.yaml
   # Path to the checkpoints or weights you want to resume. At the begining, 
-  resume: ~ #"./checkpoints/autoencoder/autoencoder-step160000-version2.pth"
+  resume: ~
 
 lightning:
   seed: ~ # 42

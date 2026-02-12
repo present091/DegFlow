@@ -3,10 +3,10 @@ lightning:
   # mode: fit  #fit
   
   trainer:
-    accelerator: auto # gpu # ddp
-    precision: 32 # bf16-mixed # 32 # 16-mixed
+    accelerator: auto 
+    precision: 32
     # Indices of GPUs used for training.
-    devices: [6, 7]
+    devices: [0, 1, 2, 3]
     strategy: ddp
 
 data:
@@ -16,26 +16,18 @@ data:
       target: datasets.realsr.RealAllScalesSRDataset
       params:
         preload: False
-        # camera_types: [Canon]
-        camera_types: [Nikon]
+        camera_types: [Nikon] # [Canon]
         augmentation: False
         test: False
-        dataroot: '/home/present091/nas/datasets/RealSR_v2_ordered/'
+        dataroot: 'Path to RealSR dataset root directory'
       # target: datasets.realsr.DIV2KDataset
       # params:
       #   preload: False
       #   augmentation: False
       #   test: False
-      #   dataroot: '/home/present091/nas/datasets/DIV2K/HR/'
-      # target: datasets.realsr.DRealSRDataset
-      # params:
-      #   preload: False
-      #   augmentation: False
-      #   test: False
-      #   dataroot: '/home/present091/nas/datasets/DRealSR/Canon/Train_x2'
-
+      #   dataroot: 'Path to DIV2K dataset root directory'
     data_loader:
-      batch_size: 1 # 256 # 8
+      batch_size: 1
       shuffle: false
       num_workers: 8
       drop_last: false
@@ -45,24 +37,17 @@ model:
   target: trainers.lit_generate.LitGenerator
   params:
     mode: 'flow' # 'ae_interp'
-    # mode: 'ae_interp' 
-    version: '27'
+    version: 'lpips'
     root_dir: '/home/present091/nas/datasets/synthetic_datasets/RealSR'
-    # root_dir: '/home/present091/nas/datasets/synthetic_datasets/DIV2K'
-    # root_dir: '/home/present091/nas/datasets/synthetic_datasets/DRealSR'
-    # root_dir: '/home/present091/nas/datasets/synthetic_datasets/ae_test'
-    camera_type: 'Nikon'
-    # camera_type: 'Nikon'
-    # camera_type: 'Canon_Test'
-    # camera_type: 'Nikon_Test'
+    camera_type: 'Nikon' # 'Canon'
     ae_config:
       target: models.ae.Autoencoder
       params:
         in_dim: 3
         base_dim: 128
-        latent_dim: 4   # 4
+        latent_dim: 4
         use_skip: True
-      checkpoint: './checkpoints/autoencoder/autoencoder-step200000-version14.pth'
+      checkpoint: 'Path_to_pretrained_autoencoder_checkpoint'  # e.g., './checkpoints/autoencoder/autoencoder-step200000-version1.pth'
 
     rf_config:
       target: models.ncsn.ncsnpp.NCSNpp
@@ -70,12 +55,10 @@ model:
         config:
           training:
             continuous: True
-
           data:
             centered: True
-            image_size: 32 #32
-            num_channels: 4 #4
-
+            image_size: 32
+            num_channels: 4
           model:
             sigma_max: 50.
             sigma_min: 0.01
@@ -89,8 +72,6 @@ model:
             nonlinearity: 'swish'
             nf: 128
             ch_mult: [1, 2, 2, 2]
-            # ch_mult: [1, 1, 2, 2, 2, 2, 2]
-            # num_res_blocks: 2
             num_res_blocks: 4
             attn_resolutions: []
             resamp_with_conv: True
@@ -107,4 +88,4 @@ model:
             embedding_type: 'positional' # 'fourier'
             fourier_scale: 16
             conv_size: 3
-      checkpoint: './checkpoints/rectified_flow/rectified_flow-step400000-version26.pth'
+      checkpoint: 'Path_to_pretrained_rectified_flow_checkpoint'  # e.g., './checkpoints/rectified_flow/rectified_flow-step400000-version1.pth'

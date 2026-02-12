@@ -7,10 +7,10 @@ dataset:
     scale: [1, 2, 3, 4]
     augmentation: False
     test: True
-    dataroot: '/home/present091/nas/datasets/RealSR_v2_ordered/'
+    dataroot: 'Path_to_RealSR_dataset_root_directory'
 
 data_loader:
-  batch_size: 1 # 256 # 8
+  batch_size: 1
   shuffle: false
   num_workers: 8
   drop_last: false
