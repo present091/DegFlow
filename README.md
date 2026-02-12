@@ -25,7 +25,7 @@ We propose **DegFlow**, a continuous degradation modeling framework that can **s
 
 ### Generated Continuous-Scale LR Images
 
-<img width="940" height="352" alt="image" src="https://github.com/user-attachments/assets/6774d968-5496-49a4-956c-25bbb8ae7cf4" />
+<img width="60%" alt="image" src="https://github.com/user-attachments/assets/6774d968-5496-49a4-956c-25bbb8ae7cf4" />
 
 ### Unseen-Scale SR Results
 
