@@ -23,6 +23,10 @@ Download the dataset from:
 https://github.com/csjcai/RealSR
 
 After downloading, set the dataset root path in the config files:
+`configs/datasets/realsr_train.yaml`
+`configs/datasets/realsr_train_allscale.yaml`
+`configs/datasets/realsr_test.yaml`
+`configs/datasets/realsr_test_allscale.yaml`
 
 ```yaml
 dataset:
