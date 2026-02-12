@@ -1,4 +1,4 @@
-# Continuous Degradation Modeling via Latent Flow Matching for Real-World Super-Resolution [AAAI2026]
+# Continuous Degradation Modeling via Latent Flow Matching for Real-World Super-Resolution [AAAI 2026]
 
 **Hyeonjae Kim***, **Dongjin Kim***, Eugene Jin, Taehyun Kim
 *Equal Contribution
