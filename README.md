@@ -3,7 +3,7 @@
 **Hyeonjae Kim***, **Dongjin Kim***, Eugene Jin, Taehyun Kim
 *Equal Contribution
 
-[📄 AAAI 2026 Paper (PDF)](https://arxiv.org/pdf/2602.04193.pdf)
+[📄 [AAAI 2026] Paper (PDF)](https://arxiv.org/pdf/2602.04193.pdf)
 
 
 ---
