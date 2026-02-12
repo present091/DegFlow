@@ -103,3 +103,6 @@ checkpoint: /path/to/checkpoint.ckpt
 ```
 
 ---
+
+## Citation If you find this work useful, please cite:
+@inproceedings{kim2026degflow, title = {Continuous Degradation Modeling via Latent Flow Matching for Real-World Super-Resolution}, author = {Kim, Hyeonjae and Kim, Dongjin and Jin, Eugene and Kim, Taehyun}, booktitle = {Proceedings of the AAAI Conference on Artificial Intelligence}, year = {2026} }
