@@ -152,7 +152,7 @@ python generate.py --config configs/generate.yaml
 
 We provide pretrained checkpoints for both the autoencoder and flow models.
 
-### Autoencoder
+### Residual Autoencoder
 
 | Model       | Download                  |
 | ----------- | ------------------------- |
