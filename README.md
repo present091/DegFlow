@@ -146,6 +146,26 @@ Run generation:
 python generate.py --config configs/generate.yaml
 ```
 
+### Generation with External HR-Only Datasets
+
+Furthermore, generation can also be performed using external datasets that contain **HR images only**.
+
+For example, **DIV2K** is currently supported.
+You can enable generation by configuring the `data` section as follows:
+
+```yaml
+data:
+  target: datasets.data_module.GenerationDataModule
+  params:
+    dataset:
+      target: datasets.dataset.DIV2K_HR_only_dataset
+      params:
+        root_dir: '/path/to/DIV2K dataset'
+```
+
+You can also perform generation with any custom dataset that contains HR images only by implementing or adapting a compatible dataset class.
+
+
 ---
 
 ## Pretrained Checkpoints
