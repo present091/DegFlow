@@ -88,6 +88,8 @@ python main.py --config configs/train_lit_rf.yaml
 
 This stage trains the latent flow model in the learned latent space.
 
+---
+
 ### LPIPS 1/t Weighting for Multi-Point Flow Matching
 
 Following *Improving the Training of Rectified Flows*, we additionally apply **1/t-style weighting** to the LPIPS loss, which was shown to improve training stability and perceptual quality.
@@ -101,8 +103,6 @@ In our **multi-point flow matching** setting, this weighting is adapted using th
 Intuitively, this formulation plays a role analogous to **1/t weighting** in rectified flow training, but is normalized within each local segment of the multi-point trajectory.
 
 We empirically observe that enabling this weighting leads to **additional performance gains** in perceptual reconstruction quality.
-
----
 
 ### Configuration
 
