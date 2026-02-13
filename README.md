@@ -94,21 +94,19 @@ Following *Improving the Training of Rectified Flows*, we additionally apply **1
 
 In our **multi-point flow matching** setting, this weighting is adapted using the relative interpolation position within each segment:
 
-[
-\Delta t_1 = \max(t_{right} - t,\ \varepsilon)
-]
+\[
+\rho(t)
+=
+\frac{t_r - t}{t_r - t_\ell}
+\]
 
-[
-\text{seg_len} = \max(t_{right} - t_{left},\ \varepsilon)
-]
+\[
+\mathcal{L}_{\mathrm{LPIPS}}^{\mathrm{weighted}}
+=
+\frac{1}{\rho(t)}
+\;\mathcal{L}_{\mathrm{LPIPS}}
+\]
 
-[
-r = \frac{\Delta t_1}{\text{seg_len}}
-]
-
-[
-\mathcal{L}*{LPIPS}^{weighted} ;=; \frac{1}{r + \varepsilon};\mathcal{L}*{LPIPS}
-]
 
 Intuitively, this formulation plays a role analogous to **1/t weighting** in rectified flow training, but is normalized within each local segment of the multi-point trajectory.
 
