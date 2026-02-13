@@ -1,6 +1,7 @@
 # Continuous Degradation Modeling via Latent Flow Matching for Real-World Super-Resolution [AAAI 2026]
 
 **Hyeonjae Kim***, **Dongjin Kim***, Eugene Jin, Taehyun Kim
+
 *Equal Contribution
 
 [📄 [AAAI 2026] Paper (PDF)](https://arxiv.org/pdf/2602.04193.pdf)
@@ -42,8 +43,14 @@ We propose **DegFlow**, a continuous degradation modeling framework that can **s
 
 We use the **RealSR Version 2** dataset for both training and evaluation.
 
-Download the dataset from:
-https://github.com/csjcai/RealSR
+To be specific, we use a dataset reconstructed from **InterFlow**
+(*Learning Controllable Degradation for Real-World Super-Resolution via Constrained Flows*),
+containing only overlapping HR–LR pairs.
+
+You may refer to the official
+[InterFlow repository](https://github.com/dongjinkim9/InterFlow/blob/main/interflow/README.md#Training),
+where the dataset is available for download.
+
 
 After downloading, set the dataset root path in the config files:
 
