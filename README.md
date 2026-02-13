@@ -1,5 +1,5 @@
 <div align="center">
-<h1>Continuous Degradation Modeling via Latent Flow Matching <br> for Real-World Super-Resolution [AAAI 2026]</h1>
+<h1>Continuous Degradation Modeling via Latent Flow Matching <br> for Real-World Super-Resolution </h1>
 
 <h4>
   Hyeonjae Kim*,
