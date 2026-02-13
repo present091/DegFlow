@@ -1,11 +1,21 @@
-# Continuous Degradation Modeling via Latent Flow Matching for Real-World Super-Resolution [AAAI 2026]
+<div align="center">
+<h1>Continuous Degradation Modeling via Latent Flow Matching <br> for Real-World Super-Resolution [AAAI 2026]</h1>
 
-**Hyeonjae Kim***, **Dongjin Kim***, Eugene Jin, Taehyun Kim
+<h4>
+  Hyeonjae Kim*,
+  <a href="https://dongjinkim9.github.io">Dongjin Kim</a>*,
+  Eugene Jin,
+  <a href="https://sites.google.com/view/lliger9/team/taehyunkim">Tae Hyun Kim</a><sup>&#8224;</sup>
+</h4>
 
-*Equal Contribution
+<b><sub><sup>* Equal contribution.  <sup>&#8224;</sup> Corresponding author.</sup></sub></b>
 
-[📄 [AAAI 2026] Paper (PDF)](https://arxiv.org/pdf/2602.04193.pdf)
+[![arXiv](https://img.shields.io/badge/Arxiv-📄Paper-8A2BE2)](https://arxiv.org/abs/2602.04193)
+&nbsp;
+[![Project_page](https://img.shields.io/badge/Project-📖Page-8A2BE2)]()
+&nbsp;
 
+</div>
 
 ---
 
