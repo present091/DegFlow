@@ -187,10 +187,12 @@ If you find this work useful, please cite:
 
 ## Acknowledgements
 
-This project builds upon the ideas from the following works:
+This project builds upon ideas from the following works:
 
-Improving the Training of Rectified Flows (NeurIPS 2024)
+- **Learning Controllable Degradation for Real-World Super-Resolution via Constrained Flows** (ICML 2023)
+- **Improving the Training of Rectified Flows** (NeurIPS 2024)
+- **Flow Straight and Fast: Learning to Generate and Transfer Data with Rectified Flow** (ICLR 2023)
 
-Flow Straight and Fast: Learning to Generate and Transfer Data with Rectified Flow (ICLR 2023)
+We sincerely thank the authors for their inspiring and foundational contributions.
 
-We thank the authors for their inspiring contributions.
+
