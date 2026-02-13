@@ -97,45 +97,6 @@ This stage trains the latent flow model in the learned latent space.
 
 ---
 
-### LPIPS 1/t Weighting for Multi-Point Flow Matching
-
-Following *Improving the Training of Rectified Flows*, we additionally apply **1/t-style weighting** to the LPIPS loss, which was shown to improve training stability and perceptual quality.
-
-
-| ⚠️ Implementation Note |
-|------------------------|
-| The LPIPS 1/t weighting is not part of the original DegFlow formulation described in the paper. It is provided as an optional training enhancement inspired by recent advances in rectified flow optimization. |
-
-
-In our **multi-point flow matching** setting, this weighting is adapted using the relative interpolation position within each segment:
-
-<p align="center">
-<img width="289" height="118" alt="image" src="https://github.com/user-attachments/assets/ce7f155b-2122-4e4c-b7f4-b251c119fdbb" />
-</p>
-
-Intuitively, this formulation plays a role analogous to **1/t weighting** in rectified flow training, but is normalized within each local segment of the multi-point trajectory.
-
-We empirically observe that enabling this weighting leads to **additional performance gains** in perceptual reconstruction quality.
-
-### Configuration
-
-The weighting can be toggled in:
-
-```
-configs/models/rf.yaml
-```
-
-```yaml
-rf_config:
-  lpips_weighting: True
-```
-
-* `True`  → Enable LPIPS 1/t weighting
-* `False` → Use uniform LPIPS weighting
-
-
----
-
 ## Dataset Generation
 
 To generate arbitrary-scale real LR samples or latent trajectories, configure:
@@ -195,12 +156,9 @@ We provide pretrained checkpoints for both the autoencoder and flow models.
 
 ### Flow Models
 
-| Model      | Description           | Download                  |
-| ---------- | --------------------- | ------------------------- |
-| Flow Model | Baseline training     | [Google Drive](https://drive.google.com/file/d/1t-V-hiJOP5g1LI-qU3VCArR6bM5OABEP/view?usp=drive_link) |
-| Flow Model | + LPIPS 1/t weighting | [Google Drive](https://drive.google.com/file/d/1H6IW6wWpryqmWPnccfYS6KX28kAktG5b/view?usp=drive_link) |
-
-The weighted version applies segment-normalized 1/t LPIPS weighting following *Improving the Training of Rectified Flows*.
+| Model      | Download                  |
+| ---------- |-------------------------- |
+| Flow Model | [Google Drive](https://drive.google.com/file/d/1t-V-hiJOP5g1LI-qU3VCArR6bM5OABEP/view?usp=drive_link) |
 
 ---
 
