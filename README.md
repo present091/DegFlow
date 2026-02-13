@@ -185,7 +185,7 @@ If you find this work useful, please cite:
 ```
 ---
 
-Acknowledgements
+## Acknowledgements
 
 This project builds upon the ideas from the following works:
 
