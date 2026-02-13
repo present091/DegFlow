@@ -88,6 +88,51 @@ python main.py --config configs/train_lit_rf.yaml
 
 This stage trains the latent flow model in the learned latent space.
 
+### LPIPS 1/t Weighting for Multi-Point Flow Matching
+
+Following *Improving the Training of Rectified Flows*, we additionally apply **1/t-style weighting** to the LPIPS loss, which was shown to improve training stability and perceptual quality.
+
+In our **multi-point flow matching** setting, this weighting is adapted using the relative interpolation position within each segment:
+
+[
+\Delta t_1 = \max(t_{right} - t,\ \varepsilon)
+]
+
+[
+\text{seg_len} = \max(t_{right} - t_{left},\ \varepsilon)
+]
+
+[
+r = \frac{\Delta t_1}{\text{seg_len}}
+]
+
+[
+\mathcal{L}*{LPIPS}^{weighted} ;=; \frac{1}{r + \varepsilon};\mathcal{L}*{LPIPS}
+]
+
+Intuitively, this formulation plays a role analogous to **1/t weighting** in rectified flow training, but is normalized within each local segment of the multi-point trajectory.
+
+We empirically observe that enabling this weighting leads to **additional performance gains** in perceptual reconstruction quality.
+
+---
+
+### Configuration
+
+The weighting can be toggled in:
+
+```
+configs/models/rf.yaml
+```
+
+```yaml
+rf_config:
+  lpips_weighting: True
+```
+
+* `True`  → Enable LPIPS 1/t weighting
+* `False` → Use uniform LPIPS weighting
+
+
 ---
 
 ## Dataset Generation
@@ -133,4 +178,14 @@ If you find this work useful, please cite:
   year      = {2026}
 }
 ```
+---
 
+Acknowledgements
+
+This project builds upon the ideas from the following works:
+
+Improving the Training of Rectified Flows (NeurIPS 2024)
+
+Flow Straight and Fast: Learning to Generate and Transfer Data with Rectified Flow (ICLR 2023)
+
+We thank the authors for their inspiring contributions.
