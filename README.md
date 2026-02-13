@@ -150,7 +150,24 @@ python generate.py --config configs/generate.yaml
 
 ## Pretrained Checkpoints
 
-Pretrained models will be released soon.
+We provide pretrained checkpoints for both the autoencoder and flow models.
+
+### Autoencoder
+
+| Model       | Download                  |
+| ----------- | ------------------------- |
+| Autoencoder | [Google Drive](https://drive.google.com/file/d/1qOAa5FwGX9fAurpB3hJtcIfrARBkTjBJ/view?usp=drive_link) |
+
+---
+
+### Flow Models
+
+| Model      | Description           | Download                  |
+| ---------- | --------------------- | ------------------------- |
+| Flow Model | Baseline training     | [Google Drive](https://drive.google.com/file/d/1t-V-hiJOP5g1LI-qU3VCArR6bM5OABEP/view?usp=drive_link) |
+| Flow Model | + LPIPS 1/t weighting | [Google Drive](https://drive.google.com/file/d/1H6IW6wWpryqmWPnccfYS6KX28kAktG5b/view?usp=drive_link) |
+
+The weighted version applies segment-normalized 1/t LPIPS weighting following *Improving the Training of Rectified Flows*.
 
 ---
 
