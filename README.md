@@ -148,7 +148,7 @@ python generate.py --config configs/generate.yaml
 
 ### Generation with External HR-Only Datasets
 
-Furthermore, generation can also be performed using external datasets that contain **HR images only**.
+Furthermore, DegFlow generation can also be performed using external datasets that contain **HR images only**.
 
 For example, **DIV2K** is currently supported.
 You can enable generation by configuring the `data` section as follows:
