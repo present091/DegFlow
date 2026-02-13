@@ -101,9 +101,11 @@ This stage trains the latent flow model in the learned latent space.
 
 Following *Improving the Training of Rectified Flows*, we additionally apply **1/t-style weighting** to the LPIPS loss, which was shown to improve training stability and perceptual quality.
 
-> **Implementation Note**
-> The LPIPS 1/t weighting is not part of the original DegFlow formulation described in the paper.
-> It is provided as an optional training enhancement inspired by recent advances in rectified flow optimization.
+
+| ⚠️ Implementation Note |
+|------------------------|
+| The LPIPS 1/t weighting is not part of the original DegFlow formulation described in the paper. It is provided as an optional training enhancement inspired by recent advances in rectified flow optimization. |
+
 
 In our **multi-point flow matching** setting, this weighting is adapted using the relative interpolation position within each segment:
 
