@@ -74,8 +74,6 @@ This enables **perceptual supervision** even at **unseen intermediate degradatio
 <img width="400" alt="image" src="https://github.com/user-attachments/assets/65883f28-821e-4144-bcf5-86b07027708b" />
 
 
-### Quantitative Results on Arbitrary-Scale SR
-
 **Table 3.** Arbitrary-scale SR results on the RealSR ×3 and RealArbiSR test sets.  
 
 <img width="1727" height="605" alt="image" src="https://github.com/user-attachments/assets/05ff0025-21be-43de-aab6-7fc9cb96c3ed" />
