@@ -38,8 +38,7 @@ We propose **DegFlow**, a continuous degradation modeling framework that can **s
 
 <p align="center">
   <img width="700" alt="image" src="https://github.com/user-attachments/assets/e4c51b80-11be-45ae-838a-a8af3115ef96" />
-</p>
-<p align="center">
+
   <sub> Illustration of latent extrapolation from an intermediate timestep tk ≤ t ≤ tk+1 toward the next degradation level tk+1 along the natural cubic spline trajectory.</sub>
 </p>
 
