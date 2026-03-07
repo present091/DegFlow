@@ -43,19 +43,19 @@ We propose **DegFlow**, a continuous degradation modeling framework that can **s
   <sub>Illustration of applying LPIPS to nonlinear flow matching for perceptually meaningful degradation modeling.</sub>
 </p>
 
-For unseen intermediate degradation scales, we extrapolate an intermediate latent toward the next discrete degradation level using a third-order Taylor expansion:
+For **unseen intermediate degradation scales**, we extrapolate an intermediate latent toward the next discrete degradation level using a **third-order Taylor expansion**:
 
 $$
 \hat{z}_{t_{k+1}} = z_t + \hat{z}'_t \Delta t + \frac{1}{2} z''_t \Delta t^2 + \frac{1}{6} z'''_t \Delta t^3
 $$
 
-We then decode the extrapolated latent and compute the LPIPS loss against the ground-truth LR image at the next degradation level:
+We then decode the extrapolated latent and compute the **LPIPS loss** against the ground-truth LR image at the next degradation level:
 
 $$
 \mathcal{L}_{\mathrm{LPIPS}} = \mathrm{LPIPS}\left(I_{s_{k+1}}, D_\theta\left(\hat{z}_{t_{k+1}}\right)\right)
 $$
 
-This enables perceptual supervision at unseen intermediate degradation scales without requiring direct ground-truth LR images.
+This enables **perceptual supervision** even at **unseen intermediate degradation scales**, without requiring direct ground-truth LR images.
 
 ---
 
