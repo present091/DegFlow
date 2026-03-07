@@ -67,8 +67,9 @@ This enables **perceptual supervision** even at **unseen intermediate degradatio
 
 ### Quantitative Results on Fixed-Scale SR
 
-**Table 2.** Fixed-scale SR results on the RealSR ×3 test set.  
 🟥 Best and 🟦 second-best are highlighted in the table.
+
+**Table 2.** Fixed-scale SR results on the RealSR ×3 test set.  
 
 <img width="400" alt="image" src="https://github.com/user-attachments/assets/65883f28-821e-4144-bcf5-86b07027708b" />
 
@@ -76,7 +77,6 @@ This enables **perceptual supervision** even at **unseen intermediate degradatio
 ### Quantitative Results on Arbitrary-Scale SR
 
 **Table 3.** Arbitrary-scale SR results on the RealSR ×3 and RealArbiSR test sets.  
-🟥 Best and 🟦 second-best are highlighted in the table.
 
 <img width="1727" height="605" alt="image" src="https://github.com/user-attachments/assets/05ff0025-21be-43de-aab6-7fc9cb96c3ed" />
 
