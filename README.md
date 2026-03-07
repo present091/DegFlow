@@ -32,6 +32,8 @@ We propose **DegFlow**, a continuous degradation modeling framework that can **s
 
 <p align="center">
   <img width="1437" height="780" alt="image" src="https://github.com/user-attachments/assets/d5b03b58-04f3-4580-ac3a-0f38cc4cea3c" />
+  
+  <img width="503" height="273" alt="image" src="https://github.com/user-attachments/assets/e4c51b80-11be-45ae-838a-a8af3115ef96" />
 </p>
 
 ---
@@ -45,6 +47,7 @@ We propose **DegFlow**, a continuous degradation modeling framework that can **s
 ### Unseen-Scale SR Results
 
 <img width="1297" height="432" alt="image" src="https://github.com/user-attachments/assets/d2a65c08-9f75-4bb6-8b0a-9ff4095dbc40" />
+
 
 
 ---
