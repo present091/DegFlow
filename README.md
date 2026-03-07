@@ -41,20 +41,20 @@ We propose **DegFlow**, a continuous degradation modeling framework that can **s
 </p>
 
 <p align="center">
-  <sub>LPIPS-based perceptual supervision is applied by extrapolating an intermediate latent toward the next discrete degradation level and comparing the decoded result with the corresponding ground-truth LR image.</sub>
+  <sub>Illustration of applying LPIPS to nonlinear flow matching for perceptually meaningful degradation modeling.</sub>
 </p>
 
-Given an intermediate timestep \( t_k < t < t_{k+1} \), we extrapolate the latent using:
+For unseen intermediate degradation scales, we extrapolate an intermediate latent toward the next discrete degradation level using a third-order Taylor expansion:
 
-\[
-\hat{z}_{t_{k+1}} = z_t + \hat{z}'_t \Delta t + \frac{1}{2} z''_t \Delta t^2 + \frac{1}{6} z'''_t \Delta t^3.
-\]
+$$
+\hat{z}_{t_{k+1}} = z_t + \hat{z}'_t \Delta t + \frac{1}{2} z''_t \Delta t^2 + \frac{1}{6} z'''_t \Delta t^3
+$$
 
-We then compute:
+We then decode the extrapolated latent and compute the LPIPS loss against the ground-truth LR image at the next degradation level:
 
-\[
-\mathcal{L}_{\mathrm{LPIPS}} = \mathrm{LPIPS}\left(I_{s_{k+1}}, D_\theta\left(\hat{z}_{t_{k+1}}\right)\right).
-\]
+$$
+\mathcal{L}_{\mathrm{LPIPS}} = \mathrm{LPIPS}\left(I_{s_{k+1}}, D_\theta\left(\hat{z}_{t_{k+1}}\right)\right)
+$$
 
 This enables perceptual supervision at unseen intermediate degradation scales without requiring direct ground-truth LR images.
 
