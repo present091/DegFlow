@@ -36,9 +36,27 @@ We propose **DegFlow**, a continuous degradation modeling framework that can **s
 
 ### LPIPS-based Perceptual Supervision for Nonlinear Flow Matching
 
-<img width="600" alt="image" src="https://github.com/user-attachments/assets/e4c51b80-11be-45ae-838a-a8af3115ef96" />
+<p align="center">
+  <img width="503" alt="image" src="https://github.com/user-attachments/assets/e4c51b80-11be-45ae-838a-a8af3115ef96" />
+</p>
 
-Illustration of applying LPIPS to nonlinear flow matching for perceptually meaningful degradation modeling.
+<p align="center">
+  <sub>LPIPS-based perceptual supervision is applied by extrapolating an intermediate latent toward the next discrete degradation level and comparing the decoded result with the corresponding ground-truth LR image.</sub>
+</p>
+
+Given an intermediate timestep \( t_k < t < t_{k+1} \), we extrapolate the latent using:
+
+\[
+\hat{z}_{t_{k+1}} = z_t + \hat{z}'_t \Delta t + \frac{1}{2} z''_t \Delta t^2 + \frac{1}{6} z'''_t \Delta t^3.
+\]
+
+We then compute:
+
+\[
+\mathcal{L}_{\mathrm{LPIPS}} = \mathrm{LPIPS}\left(I_{s_{k+1}}, D_\theta\left(\hat{z}_{t_{k+1}}\right)\right).
+\]
+
+This enables perceptual supervision at unseen intermediate degradation scales without requiring direct ground-truth LR images.
 
 ---
 
