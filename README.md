@@ -65,7 +65,7 @@ This enables **perceptual supervision** even at **unseen intermediate degradatio
 
 <img width="60%" alt="image" src="https://github.com/user-attachments/assets/6774d968-5496-49a4-956c-25bbb8ae7cf4" />
 
-### Quantitative Results on Fixed-Scale SR
+### Quantitative Results on Unseen-Scale Super-Resolution
 
 🟥 Best and 🟦 second-best are highlighted in the table.
 
@@ -79,7 +79,7 @@ This enables **perceptual supervision** even at **unseen intermediate degradatio
 <img width="1727" height="605" alt="image" src="https://github.com/user-attachments/assets/05ff0025-21be-43de-aab6-7fc9cb96c3ed" />
 
 
-### Unseen-Scale SR Results
+### Qualitative Results on Unseen-Scale Super-Resolution
 
 <img width="1297" height="432" alt="image" src="https://github.com/user-attachments/assets/d2a65c08-9f75-4bb6-8b0a-9ff4095dbc40" />
 
