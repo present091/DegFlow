@@ -12,7 +12,7 @@
 
 [![arXiv](https://img.shields.io/badge/Arxiv-📄Paper-8A2BE2)](https://arxiv.org/abs/2602.04193)
 &nbsp;
-[![Project_page]([https://img.shields.io/badge/Project-📖Page-8A2BE2](https://eugenebori.github.io/DegFlow_projectpage/))]()
+[![Project_page](https://img.shields.io/badge/Project-📖Page-8A2BE2)](https://eugenebori.github.io/DegFlow_projectpage/)
 &nbsp;
 
 </div>
